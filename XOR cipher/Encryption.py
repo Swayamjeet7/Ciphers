@@ -8,4 +8,5 @@ def encryption(message):
 
 message = input("Enter a message: ")
 cipher = encryption(message)
+print("The cipher text is: ")
 print(cipher)
