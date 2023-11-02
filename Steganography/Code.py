@@ -1,18 +1,18 @@
 from PIL import Image
 
 def encrypt(image_path,text):
+    # Converts the text into binary
     binary_text = ''.join(format(ord(char), '08b') for char in text)
-    img=Image.open(image_path)
-    img_size=img.height*img.width*3
-    if img_size < len(binary_text):
-        raise ValueError("Text is much larger")
     
-    pixels=img.load()
-    index=0
+    img=Image.open(image_path)
+    
+    pixels = img.load()
+    index = 0
     for i in range(img.width):
 	    for j in range(img.height):
               r, g, b =pixels[i,j]
               
+              # Modifies the least significant bit 
               if index < len(binary_text):
                   r=(r & 0xFE) | int(binary_text[index])
                   index += 1
@@ -29,9 +29,9 @@ def encrypt(image_path,text):
 
 
 def main():
-    image_path=input("Image path: ")
-    text=input("Text: ")
-    output_path=input("Output path: ")
+    image_path=input("Enter image path: ")
+    text=input("Enter the text: ")
+    output_path=input("Enter output path: ")
     new_image = encrypt(image_path,text)
     new_image.save(output_path)
 
