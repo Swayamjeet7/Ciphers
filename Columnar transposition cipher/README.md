@@ -1,0 +1,2 @@
+<h2>The transposition cipher rearranges the message’s symbols into an order that makes the original message unreadable.<h2>
+<h3>Columnar Transposition involves writing the plaintext out in rows, and then reading the ciphertext off in columns one by one.<h3>
