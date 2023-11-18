@@ -16,8 +16,8 @@ def encrypt(message,key):
 
 
 def main():
-    message = input()
-    key = int(input())
+    message = input('Enter a message: ')
+    key = int(input('Enter a key nummber: '))
     ciphertext = encrypt(message,key)
     print(ciphertext)
 
