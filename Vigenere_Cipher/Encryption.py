@@ -1,4 +1,5 @@
 def main():
+    
     letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
     message = input('Enter a message: ')

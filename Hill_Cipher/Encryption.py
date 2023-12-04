@@ -1,12 +1,18 @@
 import numpy as np
 
 def key_generator(ln):
-    # key_matrix = np.random.randint(5, size=(ln,ln))
-    key_matrix=[[1,2],[2,3]]
+    
+    for i in range(10):
+        key_matrix = np.random.randint(5, size=(ln,ln))
+        if np.linalg.det(key_matrix) != 0 :
+            break
+    
     key_text=""
+    
     for m in range(ln):
         for n in range(ln):
             key_text = key_text + chr(key_matrix[m][n] + 64)
+    
     return key_matrix,key_text
 
 
@@ -14,6 +20,7 @@ def main():
     message = input("Enter a message: ")
     length = len(message)
     message_matrix = []
+    
     for char in message:
         message_matrix.append(ord(char) - 31)
 
@@ -29,5 +36,5 @@ def main():
     print(f"The cipher is: {cipher}")
     print(f"The key used for encryption is: {key_text}")
 
-if __name__=="__main__":
+if __name__ == "__main__":
     main()

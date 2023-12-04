@@ -1,4 +1,7 @@
-def encrypt(message,key):
+def main():
+    message = input('Enter a message: ')
+    key = int(input('Enter a key number: '))
+    
     cipher = [''] * key
 
     # Loop through each column in cipher:
@@ -11,14 +14,8 @@ def encrypt(message,key):
 
             index +=key
 
-    # Return the cipher list by turning it into a single string 
-    return ''.join(cipher)   
-
-
-def main():
-    message = input('Enter a message: ')
-    key = int(input('Enter a key nummber: '))
-    ciphertext = encrypt(message,key)
+    # Print the cipher list by turning it into a single string 
+    ciphertext = ''.join(cipher)
     print(ciphertext)
 
 if __name__ == '__main__':

@@ -1,7 +1,9 @@
 from math import ceil
 
-def decrypt(message,key):
-    
+def main():
+    message = input('Enter the ciphertext: ')
+    key = int(input('Enter the key used for encryption: '))
+
     # shape of transposition grid
     numofRows = key
     numofColumns = int(ceil(len(message) / float(key))) 
@@ -23,12 +25,7 @@ def decrypt(message,key):
             column = 0
             row += 1
 
-    return ''.join(text)        
-
-def main():
-    ciphertext = input('Enter the ciphertext: ')
-    key = int(input('Enter the key used for encryption: '))
-    message = decrypt(ciphertext,key)
+    message = ''.join(text)
     print(message)
 
 if __name__ == '__main__':
